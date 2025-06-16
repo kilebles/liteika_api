@@ -7,7 +7,7 @@ from app.liteika_api.config import config
 from app.liteika_api.routes import router as api_router
 from app.liteika_api.middlewares.admin_auth import AdminAuthMiddleware
 from app.liteika_api.middlewares.cors import setup_cors
-from app.liteika_api.admin.admin import setup_admin
+from app.liteika_api.admin.templates.admin import setup_admin
 
 app = FastAPI(title='liteika_api')
 

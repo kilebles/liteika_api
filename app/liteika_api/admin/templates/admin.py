@@ -13,7 +13,7 @@ sync_engine = create_engine(SYNC_DATABASE_URL, echo=False)
 
 
 def setup_admin(app):
-    admin = Admin(app, sync_engine, templates_dir='app/fujida_api/admin/templates')
+    admin = Admin(app, sync_engine, templates_dir='app/liteika_api/admin/templates')
 
     class FAQEntryAdmin(ModelView, model=FAQEntry):
         column_list = [FAQEntry.id, FAQEntry.question, FAQEntry.answer]
