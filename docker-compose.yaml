@@ -40,17 +40,18 @@ services:
     volumes:
       - .:/app
 
-  # nginx:
-  #   image: nginx:latest
-  #   container_name: liteika_nginx
-  #   restart: always
-  #   ports:
-  #     - "80:80"
-
-  #   depends_on:
-  #     - liteika_api
-  #   volumes:
-  #     - ./nginx/conf.d:/etc/nginx/conf.d
+  nginx:
+    image: nginx:latest
+    container_name: liteika_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - liteika_api
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt:ro
 
 volumes:
   pgdata:
